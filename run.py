@@ -16,6 +16,8 @@ food = (10,20)
 # Game logic
 score = 0
 
+ESC = 27
+key = curses.KEY_RIGHT
 while True:
     event = win.getch()
     for c in snake:
@@ -24,4 +26,5 @@ while True:
     win.addch(food[0], food[1] , '#')
 curses.endwin()
 print(f"Final score = {score}")
+
 
