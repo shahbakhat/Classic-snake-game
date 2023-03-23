@@ -26,8 +26,12 @@ while key != ESC:
     event = win.getch()
     key = event if event != -1 else prev_key
     
-    if key not in [curses.KEY_LEFT, curses.KEY_RIGHT, curses.KEY_UP, curses.KEY_DOWN, ESC]
-    
+    if key not in [curses.KEY_LEFT, curses.KEY_RIGHT, curses.KEY_UP, curses.KEY_DOWN, ESC] :
+        key = prev_key
+        
+    # calculate the next coordinates
+    y = snake[0][0]
+    x = snake[0][1]
     for c in snake:
         win.addch(c[0], c[1] , '*')
 
