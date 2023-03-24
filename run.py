@@ -32,6 +32,15 @@ while key != ESC:
     # calculate the next coordinates
     y = snake[0][0]
     x = snake[0][1]
+    if key == curses.KEY_DOWN:
+        y += 1
+    if key == curses.KEY_UP:
+        y -= 1
+    if key == curses.KEY_LEFT:
+        y -= 1
+    if key == curses.KEY_RIGHT:
+        x += 1
+        
     for c in snake:
         win.addch(c[0], c[1] , '*')
 
