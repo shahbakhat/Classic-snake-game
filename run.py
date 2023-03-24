@@ -1,4 +1,5 @@
 import curses
+from random import randint
 # Setting up the window
 curses.initscr()
 win = curses.newwin(20,60,0,0)
@@ -49,6 +50,16 @@ while key != ESC:
     if y == 19: break
     if x == 0: break
     if x == 59: break
+    
+    # whnen snake hits his his own body
+    if snake[0] in snake[1:]:break
+    
+    # when snake eats the food
+    if snake [0] == food:
+        score += 1
+        food = ()
+        while food == ():
+            food = ()
     
     for c in snake:
         win.addch(c[0], c[1] , '*')
