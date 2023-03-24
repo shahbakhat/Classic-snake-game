@@ -27,7 +27,7 @@ key = curses.KEY_RIGHT
 while key != ESC:
     win.addstr(0,2, 'Score' + str(score) + '')
     #increase speed of the snake
-    win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120 ) 
+    win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120 )
 
 
 
@@ -42,7 +42,7 @@ while key != ESC:
     if key not in [curses.KEY_LEFT, curses.KEY_RIGHT,
     curses.KEY_UP, curses.KEY_DOWN, ESC] :
         key = prev_key
- 
+
     # calculate the next coordinates
     y = snake[0][0]
     x = snake[0][1]
@@ -56,7 +56,7 @@ while key != ESC:
         x += 1
 
     # New head of the snake
-    snake.insert(0,(y,x))    
+    snake.insert(0,(y,x))
     # if snake hits the border, then
     if y == 0: break
     if y == WINDOW_HEIGHT - 1: break
@@ -71,7 +71,7 @@ while key != ESC:
         score += 1
         food = ()
         while food == ():
-            food = (randint,(1,WINDOW_HEIGHT -  2) 
+            food = (randint,(1,WINDOW_HEIGHT -  2)
                     , randint(1,WINDOW_WIDTH - 2))
             if food in snake:
                 food = ()
@@ -82,7 +82,7 @@ while key != ESC:
         win.addch(last[0], last[1], ' ')
 
     win.addch(food[0], food[1] , '#')
- 
+
 curses.endwin()
 print(f"Final score = {score}")
 
