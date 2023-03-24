@@ -40,7 +40,16 @@ while key != ESC:
         y -= 1
     if key == curses.KEY_RIGHT:
         x += 1
-        
+    
+    # New head of the snake
+    snake.insert(0,(y,x))
+    
+    # if snake hits the border, then
+    if y == 0: break
+    if y == 19: break
+    if x == 0: break
+    if x == 59: break
+    
     for c in snake:
         win.addch(c[0], c[1] , '*')
 
