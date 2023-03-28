@@ -1,10 +1,6 @@
-
 import curses
 from random import randint
 
-# constatns
-WINDOW_WIDTH = 60
-WINDOW_HEIGHT = 20
 # Setting up the window
 curses.initscr()
 win = curses.newwin(20,60,0,0)
@@ -15,8 +11,10 @@ win.border(0)
 win.nodelay(1)
 
 # Snake and Food
-snake = [(4,4),(4,3),(4,2)]
+snake = [(4,10),(4,9),(4,8)]
 food = (6 , 6)
+
+win.addch(food[0], food[1] , '#')
 
 # Game logic
 score = 0
@@ -25,11 +23,9 @@ ESC = 27
 key = curses.KEY_RIGHT
 
 while key != ESC:
-    win.addstr(0,2, 'Score' + str(score) + '')
+    win.addstr(0, 2, 'Score' + ' '  + '=' + ' ' +  str(score))
     #increase speed of the snake
     win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120 )
-
-
 
 
     prev_key = key
@@ -40,7 +36,7 @@ while key != ESC:
 
 
     if key not in [curses.KEY_LEFT, curses.KEY_RIGHT,
-    curses.KEY_UP, curses.KEY_DOWN, ESC] :
+                curses.KEY_UP, curses.KEY_DOWN, ESC] :
         key = prev_key
 
     # calculate the next coordinates
@@ -59,9 +55,9 @@ while key != ESC:
     snake.insert(0,(y,x))
     # if snake hits the border, then
     if y == 0: break
-    if y == WINDOW_HEIGHT - 1: break
+    if y == 20 - 1: break
     if x == 0: break
-    if x == WINDOW_WIDTH - 1: break
+    if x == 60 - 1: break
 
     # when snake hits his his own body
     if snake[0] in snake[1:]:break
@@ -71,19 +67,16 @@ while key != ESC:
         score += 1
         food = ()
         while food == ():
-            food = (randint,(1,WINDOW_HEIGHT -  2)
-                    , randint(1,WINDOW_WIDTH - 2))
+            food = (randint,(1,18), randint(1,58))
+
             if food in snake:
                 food = ()
-                win.addch(food[0], food[1] , '#')
+        win.addch(food[0], food[1] , '#')
     else:
         # move snake
         last = snake.pop()
         win.addch(last[0], last[1], ' ')
 
-    win.addch(food[0], food[1] , '#')
-
+    win.addch(snake[0][0], snake[0][1] , '*')
 curses.endwin()
 print(f"Final score = {score}")
-
-
