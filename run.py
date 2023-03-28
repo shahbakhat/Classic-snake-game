@@ -23,7 +23,7 @@ ESC = 27
 key = curses.KEY_RIGHT
 
 while key != ESC:
-    win.addstr(0, 2, 'Score' + ' '  + '=' + ' ' +  str(score))
+    win.addstr(0, 2, 'Score' + ' '  + ' = ' + ' ' +  str(score))
     #increase speed of the snake
     win.timeout(150 - (len(snake)) // 5 + len(snake) // 10 % 120 )
 
@@ -71,12 +71,12 @@ while key != ESC:
 
             if food in snake:
                 food = ()
-        win.addch(food[0], food[1] , '#')
+        win.addch(food[0], food[1], '#')
     else:
         # move snake
         last = snake.pop()
         win.addch(last[0], last[1], ' ')
 
-    win.addch(snake[0][0], snake[0][1] , '*')
+    win.addch(snake[0][0], snake[0][1] , ' * ')
 curses.endwin()
 print(f"Final score = {score}")
