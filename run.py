@@ -1,6 +1,10 @@
 import curses 
 from random import randint
 
+print('To play the game every time Click! run program')
+print('To Exit the game pres ESC key')
+print ('If snake will hit his body the game ends')
+
 # constants
 width = 18
 height = 58
@@ -75,6 +79,8 @@ while key != ESC:
         win.addch(last[0], last[1], ' ')
 
     win.addch(snake[0][0], snake[0][1],'*')
-
+print('To play the game every time Click! run program')
+print('To Exit the game pres ESC key')
+print ('If snake will hit his body the game ends')
 curses.endwin()
 print(f"Final score = {score}")
