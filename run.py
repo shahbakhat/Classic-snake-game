@@ -78,5 +78,5 @@ while key != ESC:
 
     win.addch(snake[0][0], snake[0][1],'*')
 
-curses.endwin()§
+curses.endwin()
 print(f"Final score = {score}")
