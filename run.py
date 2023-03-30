@@ -10,7 +10,6 @@ curses.initscr()
 win = curses.newwin(width + 2, height + 2, 0, 0) # y,x
 win.keypad(1)
 curses.noecho()
-curses.curs_set(1)
 win.border(0)
 win.nodelay(1) # - 1
 
