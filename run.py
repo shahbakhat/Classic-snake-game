@@ -1,9 +1,6 @@
 import curses 
 from random import randint
 
-print('To play the game every time Click! run program')
-print('To Exit the game pres ESC key')
-print ('If snake will hit his body the game ends')
 
 # constants
 width = 18
@@ -29,7 +26,7 @@ ESC = 27
 key = curses.KEY_RIGHT
 
 while key != ESC:
-    win.addstr(0, 2, 'Score ' + str(score) + ' ')
+    win.addstr(0, 2, 'Score ' + str(score) + ' :' + 'To Exit the game pres ESC key :')
     win.timeout(150 - (len(snake)) // 5 
     + len(snake)//10 % 120) # increase speed
 
@@ -79,8 +76,6 @@ while key != ESC:
         win.addch(last[0], last[1], ' ')
 
     win.addch(snake[0][0], snake[0][1],'*')
-print('To play the game every time Click! run program')
-print('To Exit the game pres ESC key')
-print ('If snake will hit his body the game ends')
+
 curses.endwin()
-print(f"Final score = {score}")
+print(f"Final score = {score}" + "\nTo play the game AGAIN Click! run program")
