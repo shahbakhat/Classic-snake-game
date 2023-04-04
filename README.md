@@ -73,6 +73,7 @@
 | __Testing the snake eats food and increase in length__ | Whenever food was eaten by the snake Game ended. due to the **curses.curs_set()** and then i had ot delete that code of line|   **PASS** |
 |  __Testing if the Game is over at specific rules__| By hitting the wall game should end and by hitting the snake its own body game should end   |   **PASS** |
 | __Testing the code works again and again__ | When game ends and user clicks the RUN PROGRAM game starts as normal  |    **PASS** |
+__Testing the Score increases__ | Whenever snake eats food the Score goes up by 1  |    **PASS** |
 |
 ​
 ### Heroku Deployment
@@ -85,7 +86,6 @@ Deployment steps are as follows, after account setup:
 - Enter a name for your app. The app name must be unique, so you need to adjust the name until you find a name that hasn't been used.
 - From the dropdown, choose the region closest to you (EU or USA), and finally, select *Create App*.
 - From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
-- Now, add a seecond Config Var for the `creds.json`file, which contains the API Key from Google Sheets. Set the value of KEY to `CREDS` and paste the entire contents of `creds.json` in the VALUE box. Select *add*.
 - Further down, to support dependencies, select *Add buildpack*.
 - The order of the buildpacks is important. Select `Python` first, then *Save changes*. Click *Add buildpack* again, and select `Node.js`, then *Save changes*. If they are not in this order, you can drag them to rearrange them
 
@@ -108,7 +108,7 @@ For Heroku deployment, follow these steps to connect your GitHub repository to t
 
 The frontend terminal should now be connected and deployed to Heroku.
 
-## Credits 
+## Credits
 
 
 ### Content 
