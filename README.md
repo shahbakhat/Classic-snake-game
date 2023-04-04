@@ -111,11 +111,11 @@ The frontend terminal should now be connected and deployed to Heroku.
 ## Credits
 
 
-### Content 
-- I used Code Institute's Love Sandwiches Walkthrough ([repo here](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/05-deployment/01-deployment-part-1)) for the idea and the process of Heroku Deployment.
+### Content
+- I used Code Institute's Love Sandwiches Lesson ([repo here](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/05-deployment/01-deployment-part-1)) for the idea and the process of Heroku Deployment.
 - For slower printing to the terminal I used Stackoverflow. The page is [here](https://stackoverflow.com/questions/510348/how-do-i-make-a-time-delay)
 
-- To figure out deployment issues i used [Stack overflow(https://stackoverflow.com/)
+- To figure out deployment issues i used [Stack overflow](https://stackoverflow.com/)
 
 - For the coding and the guidance i researhced few Youtube Channels and some web articles
 
